@@ -1,24 +1,29 @@
-import logo from './logo.svg';
-import './App.css';
+import { useEffect, useState } from "react";
+import "./App.css";
+import SideBar from "./components/SideBar";
+import Tasks from "./pages/Tasks";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import CreateTask from "./pages/CreateTask";
 
 function App() {
+  const [user, setUser] = useState({ name: "Thompson", role: "dev" });
+  const [tasks, setTasks] = useState([])
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <div className="App">
+        <h1>Task Manager App</h1>
+
+        <div className="content">
+          <div className="sidebar-container">
+            <SideBar user={user} />
+          </div>
+          <Routes>
+            <Route exact path="/" element={<Tasks tasks={tasks}/>} />
+            <Route path="/create" element={<CreateTask tasks={tasks} setTasks={setTasks}/>} />
+          </Routes>
+        </div>
+      </div>
+    </Router>
   );
 }
 
