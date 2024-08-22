@@ -1,21 +1,38 @@
 const SingleTask = (props) => {
   const tasks = props.tasks;
   const setTasks = props.setTasks;
+  const completedTasks = props.completedTasks || [];
+  const setCompletedTasks = props.setCompletedTasks;
+  const pendingTasks = props.pendingTasks || [];
+  const setPendingTasks = props.setPendingTasks;
 
   function handleDelete(id){
     const updatedArray = tasks.filter(task => task.id !== id)
     setTasks(updatedArray)
+    setCompletedTasks(completedTasks.filter(task => task.id !== id));
+    setPendingTasks(pendingTasks.filter(task => task.id !== id));
   }
-  function handleStatus(id){
-    const updatedStatus = tasks.map(task => {
-      if (task.id === id){
-        return {...task, 
-          status: task.status === 'completed'? 'pending' : 'completed'  // Toggle status
-        };
+  function handleStatus(id) {
+    const updatedTasks = tasks.map(task => {
+      if (task.id === id) {
+        const newStatus = task.status === 'completed' ? 'pending' : 'completed';
+        const updatedTask = { ...task, status: newStatus };
+
+        // Update completed and pending tasks based on new status
+        if (newStatus === 'completed') {
+          setCompletedTasks([...completedTasks, updatedTask]);
+          setPendingTasks(pendingTasks.filter(task => task.id !== id));
+        } else {
+          setPendingTasks([...pendingTasks, updatedTask]);
+          setCompletedTasks(completedTasks.filter(task => task.id !== id));
+        }
+
+        return updatedTask;
       }
-      return task;   
-    })    
-    setTasks(updatedStatus)
+      return task;
+    });
+
+    setTasks(updatedTasks);
   }
   return (
     <div>

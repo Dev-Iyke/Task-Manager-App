@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const CreateTask = ({tasks, setTasks}) => {
+const CreateTask = ({tasks, setTasks, setPendingTasks, pendingTasks, completedTasks, setCompletedTasks}) => {
 
   const [title, setTitle] = useState("");
   const [details, setDetails] = useState("");
@@ -8,8 +8,12 @@ const CreateTask = ({tasks, setTasks}) => {
 
   function handleSubmit() {
     console.log("data received");
-    const newTask = { title, details, status, id: Date.now() };
-
+    const newTask = { title, details, status, id: Number(Date.now().toString().slice((-4))) };
+    if (newTask.status === "pending") {
+      setPendingTasks([...pendingTasks, newTask]);
+    }else if (newTask.status === "completed") {
+      setCompletedTasks([...completedTasks, newTask]);
+    }
     setTasks([...tasks, newTask]);
     setTitle("");
     setDetails("");

@@ -10,6 +10,8 @@ const SideBar = (props) => {
         <ul>
           <li><Link to="/">My tasks</Link></li>
           <li><Link to="/create">Create</Link></li>
+          <li><Link to="/pending">Pending</Link></li>
+          <li><Link to="/completed">Completed</Link></li>
         </ul>
         
       </nav>
