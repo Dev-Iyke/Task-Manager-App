@@ -12,7 +12,7 @@
   margin: 0 auto;
 }
 .content .sidebar-container{
-  background-color: rebeccapurple;
+  background-color: rgb(139, 133, 146);
 }
 .content .tasks-container{
   grid-area: 'tsk';
@@ -23,7 +23,7 @@
 .content .sidebar{
   width: 100%;
   margin: 0 auto;
-  color: white;
+  color: rgb(52, 42, 42);
 }
 
 form{
