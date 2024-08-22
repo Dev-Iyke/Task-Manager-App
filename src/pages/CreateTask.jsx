@@ -1,5 +1,3 @@
-import { useEffect, useState } from "react";
-
 const CreateTask = ({tasks, setTasks}) => {
 
   const [title, setTitle] = useState("");
