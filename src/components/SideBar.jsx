@@ -7,11 +7,14 @@ const SideBar = (props) => {
     <div className="sidebar">
       <h2>Quick Tabs</h2>
       <nav>
-        <Link to="/">My tasks</Link>
-        <Link to="/create">Create</Link>
+        <ul>
+          <li><Link to="/">My tasks</Link></li>
+          <li><Link to="/create">Create</Link></li>
+        </ul>
+        
       </nav>
 
-      <div>
+      <div className="user">
         <h3>{user.name}</h3>
         <p>{user.role}</p>
       </div>

@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import "./App.css";
 import SideBar from "./components/SideBar";
 import Tasks from "./pages/Tasks";
@@ -18,7 +18,7 @@ function App() {
             <SideBar user={user} />
           </div>
           <Routes>
-            <Route exact path="/" element={<Tasks tasks={tasks}/>} />
+            <Route exact path="/" element={<Tasks tasks={tasks} setTasks={setTasks}/>} />
             <Route path="/create" element={<CreateTask tasks={tasks} setTasks={setTasks}/>} />
           </Routes>
         </div>
