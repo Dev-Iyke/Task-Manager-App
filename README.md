@@ -1,70 +1,56 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Pseudocode for Task Management Application
 
-## Available Scripts
+## 1. Initialization
+- **Initialize State Variables:**
+  - `tasks`: A list to store all tasks.
+  - `pendingTasks`: A list to store tasks with status 'pending'.
+  - `completedTasks`: A list to store tasks with status 'completed'.
 
-In the project directory, you can run:
+## 2. Task Creation
+- **Create a New Task:**
+  - Capture task details (`title`, `details`, `status`).
+  - Generate a unique `id` for the task.
+  - Add the new task to the `tasks` list.
+- **Check Task Status:**
+  - If status is 'pending', add the task to `pendingTasks`.
+  - If status is 'completed', add the task to `completedTasks`.
 
-### `npm start`
+## 3. Displaying Tasks
+- **Show All Tasks:**
+  - Iterate through the `tasks` list and display each task.
+- **Show Pending Tasks:**
+  - Filter the `tasks` list for tasks with status 'pending'.
+  - Display the filtered tasks.
+- **Show Completed Tasks:**
+  - Filter the `tasks` list for tasks with status 'completed'.
+  - Display the filtered tasks.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## 4. Task Status Management
+- **Toggle Task Status:**
+  - Identify the task to toggle based on its `id`.
+- **Switch Status:**
+  - If the current status is 'pending':
+    - Change status to 'completed'.
+    - Move the task from `pendingTasks` to `completedTasks`.
+  - If the current status is 'completed':
+    - Change status to 'pending'.
+    - Move the task from `completedTasks` to `pendingTasks`.
+  - Update the `tasks` list with the new status.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## 5. Task Deletion
+- **Delete a Task:**
+  - Identify the task to delete based on its `id`.
+  - Remove the task from the `tasks` list.
+- **Remove from Specific Status List:**
+  - If the task is in `pendingTasks`, remove it from that list.
+  - If the task is in `completedTasks`, remove it from that list.
 
-### `npm test`
+## 6. Navigation Between Pages
+- **Navigate to Different Pages:**
+  - Use routing to navigate between the 'All Tasks', 'Pending Tasks', and 'Completed Tasks' pages.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## 7. Error Handling and Debugging
+- **Handle Errors:**
+  - Ensure all tasks are properly added, deleted, or toggled without issues.
+  - Debug any overlapping or unexpected deletions by checking the logic in the `handleStatus` and `handleDelete` functions.

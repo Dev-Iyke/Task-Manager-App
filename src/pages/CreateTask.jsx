@@ -1,30 +1,22 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
-const CreateTask = ({tasks, setTasks, setPendingTasks, pendingTasks, completedTasks, setCompletedTasks}) => {
+const CreateTask = ({tasks, setTasks}) => {
 
   const [title, setTitle] = useState("");
   const [details, setDetails] = useState("");
   const [status, setStatus] = useState("pending");
+  const navigate = useNavigate()
 
   function handleSubmit() {
     console.log("data received");
     const newTask = { title, details, status, id: Number(Date.now().toString().slice((-4))) };
-    if (newTask.status === "pending") {
-      setPendingTasks([...pendingTasks, newTask]);
-    }else if (newTask.status === "completed") {
-      setCompletedTasks([...completedTasks, newTask]);
-    }
     setTasks([...tasks, newTask]);
     setTitle("");
     setDetails("");
     setStatus("pending");
+    navigate("/")
   }
-
-/*   useEffect(() => {
-    console.log('useEffect ran')
-    console.log(tasks);
-    console.log(tasks.length)
-  }, [tasks]) */
 
   return (
     <div className="single-task">

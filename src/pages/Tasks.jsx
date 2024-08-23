@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import SingleTask from "../components/SingleTask";
 
-const Tasks = ({setTasks, tasks, setPendingTasks, pendingTasks, setCompletedTasks, completedTasks}) => {
+const Tasks = ({setTasks, tasks}) => {
 /*   const setTasks = props.setTasks
   const tasks = props.tasks
   const setPendingTasks = props.setPendingTasks
@@ -17,7 +17,7 @@ const Tasks = ({setTasks, tasks, setPendingTasks, pendingTasks, setCompletedTask
       <div>
         {(tasks.length === 0) ?
          (<h3>You do not have any task yet. <br /> click <Link to='/create'>here</Link> to add one</h3>) : 
-         (<SingleTask tasks={tasks} setTasks={setTasks} pendingTasks={pendingTasks} setPendingTasks={setPendingTasks} completedTasks={completedTasks} setCompletedTasks={setCompletedTasks}/>)}
+         (<SingleTask tasks={tasks} setTasks={setTasks} />)}
       </div>
       
     </div>

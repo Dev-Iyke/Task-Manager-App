@@ -2,20 +2,20 @@ import { Link } from "react-router-dom";
 import SingleTask from "../components/SingleTask";
 
 const PendingTasks = (props) => {
-  const setPendingTasks = props.setPendingTasks
-  const pendingTasks = props.pendingTasks
   const tasks = props.tasks
+  const setTasks = props.setTasks
+  const pendingTasks = tasks.filter(task => task.status === 'pending')
 
-  function filterTasks(){
+/*   function filterTasks(){
     console.log("filterTasks")
     const pendingTasks = tasks.filter((task) => task.status === 'pending')
     setPendingTasks(pendingTasks)
     //history.go(1)
-  }
+  } */
 
   return (
     <div className="pending">
-      <button onClick={() => filterTasks()}>pending</button>
+      <button /* onClick={() => filterTasks()} */>pending</button>
       <div>
         {pendingTasks.length === 0 ? (
           <h3>
@@ -23,7 +23,7 @@ const PendingTasks = (props) => {
             <Link to="/create">here</Link> to add one
           </h3>
         ) : (
-          <SingleTask tasks={pendingTasks} setTasks={setPendingTasks} />
+          <SingleTask tasks={pendingTasks} setTasks={setTasks} />
         )}
       </div>
     </div>

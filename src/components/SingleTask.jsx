@@ -1,39 +1,23 @@
 const SingleTask = (props) => {
   const tasks = props.tasks;
   const setTasks = props.setTasks;
-  const completedTasks = props.completedTasks || [];
-  const setCompletedTasks = props.setCompletedTasks;
-  const pendingTasks = props.pendingTasks || [];
-  const setPendingTasks = props.setPendingTasks;
 
-  function handleDelete(id){
-    const updatedArray = tasks.filter(task => task.id !== id)
-    setTasks(updatedArray)
-    setCompletedTasks(completedTasks.filter(task => task.id !== id));
-    setPendingTasks(pendingTasks.filter(task => task.id !== id));
-  }
-  function handleStatus(id) {
-    const updatedTasks = tasks.map(task => {
-      if (task.id === id) {
-        const newStatus = task.status === 'completed' ? 'pending' : 'completed';
-        const updatedTask = { ...task, status: newStatus };
 
-        // Update completed and pending tasks based on new status
-        if (newStatus === 'completed') {
-          setCompletedTasks([...completedTasks, updatedTask]);
-          setPendingTasks(pendingTasks.filter(task => task.id !== id));
-        } else {
-          setPendingTasks([...pendingTasks, updatedTask]);
-          setCompletedTasks(completedTasks.filter(task => task.id !== id));
-        }
+  const handleDelete = (id) => {
+    setTasks((prevTasks) => prevTasks.filter((task) => task.id !== id));
+  };
+  
+  const handleStatusToggle = (id) => {
+    setTasks((prevTasks) =>
+      prevTasks.map((task) =>
+        task.id === id
+          ? { ...task, status: task.status === "pending" ? "completed" : "pending" }
+          : task
+      )
+    );
+  };
 
-        return updatedTask;
-      }
-      return task;
-    });
-
-    setTasks(updatedTasks);
-  }
+  
   return (
     <div>
       { 
@@ -44,7 +28,7 @@ const SingleTask = (props) => {
             {/* <p>{task.status}</p> */}
             <p>{task.id}</p>
             <button onClick={() => handleDelete(task.id)}>Delete</button>
-            <button onClick={() => handleStatus(task.id)}>{task.status}</button>
+            <button onClick={() => handleStatusToggle(task.id)}>Mark as {task.status === "pending" ? "Completed" : "Pending"}</button>
           </div>
           
         ))
