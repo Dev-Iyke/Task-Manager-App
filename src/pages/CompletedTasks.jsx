@@ -4,19 +4,11 @@ import SingleTask from "../components/SingleTask";
 const CompletedTasks = (props) => {
   const tasks = props.tasks
   const setTasks = props.setTasks
-
   const completedTasks = tasks.filter(task => task.status === 'completed')
 
-  /* function filterTasks(){
-    console.log("filterTasks")
-    const completedTasks = tasks.filter((task) => task.status === 'completed')
-    setCompletedTasks(completedTasks)
-    //history.go(1)
-  }
- */
   return (
     <div className="completed">
-      <button /* onClick={() => filterTasks()} */>completed</button>
+      <button>completed</button>
       <div>
         {completedTasks.length === 0 ? (
           <h3>

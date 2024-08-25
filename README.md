@@ -1,4 +1,3 @@
-
 # Pseudocode for Task Management Application
 
 ## 1. Initialization
@@ -54,3 +53,13 @@
 - **Handle Errors:**
   - Ensure all tasks are properly added, deleted, or toggled without issues.
   - Debug any overlapping or unexpected deletions by checking the logic in the `handleStatus` and `handleDelete` functions.
+
+## 8. Persisting Data to Local Storage
+- **8.1 Save Tasks to Local Storage:**
+Inside the main state that holds the tasks array in App.js, use useEffect to save the tasks array to local storage whenever it changes.
+- **8.2 Load Tasks from Local Storage:**
+During the initial render, load the tasks from local storage if they exist.
+Initialize the tasks state with the data from local storage or an empty array if no data is found.
+- **8.3 Update Tasks in Local Storage:**
+Automatically handled by the useEffect that monitors changes to the tasks array.
+No additional code is needed as the useEffect will save the updated tasks to local storage each time the state changes.

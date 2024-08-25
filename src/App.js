@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./App.css";
 import SideBar from "./components/SideBar";
 import Tasks from "./pages/Tasks";
@@ -9,8 +9,16 @@ import CompletedTasks from "./pages/CompletedTasks";
 
 function App() {
   const [user, setUser] = useState({ name: "Thompson", role: "dev" });
-  const [tasks, setTasks] = useState([])
+  const [tasks, setTasks] = useState(() => {
+    //returns the tasks that was sent to the storage or returns an empty array if no tasks were saved before and assigns it as the initial value of tasks.
+    const storedTasks = localStorage.getItem("locallyStoredTasks");
+    return storedTasks ? JSON.parse(storedTasks) : []
+  })
 
+ //will send our state to local storage using the setItem. useEffect runs immediately the app component is mounted or whenever there is a change to the tasks
+  useEffect(() => {
+    localStorage.setItem("locallyStoredTasks", JSON.stringify(tasks))
+  }, [tasks])
 
   return (
     <Router>

@@ -6,16 +6,9 @@ const PendingTasks = (props) => {
   const setTasks = props.setTasks
   const pendingTasks = tasks.filter(task => task.status === 'pending')
 
-/*   function filterTasks(){
-    console.log("filterTasks")
-    const pendingTasks = tasks.filter((task) => task.status === 'pending')
-    setPendingTasks(pendingTasks)
-    //history.go(1)
-  } */
-
   return (
     <div className="pending">
-      <button /* onClick={() => filterTasks()} */>pending</button>
+      <button>pending</button>
       <div>
         {pendingTasks.length === 0 ? (
           <h3>

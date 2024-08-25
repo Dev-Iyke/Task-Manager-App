@@ -4,7 +4,9 @@ const SingleTask = (props) => {
 
 
   const handleDelete = (id) => {
-    setTasks((prevTasks) => prevTasks.filter((task) => task.id !== id));
+    const updatedTasks = tasks.filter((task) =>task.id !== id)
+    setTasks(updatedTasks)
+    //setTasks((prevTasks) => prevTasks.filter((task) => task.id !== id));
   };
   
   const handleStatusToggle = (id) => {
@@ -25,7 +27,6 @@ const SingleTask = (props) => {
           <div className="task" key={index}>
             <h2>{task.title}</h2>
             <p>{task.details}</p>
-            {/* <p>{task.status}</p> */}
             <p>{task.id}</p>
             <button onClick={() => handleDelete(task.id)}>Delete</button>
             <button onClick={() => handleStatusToggle(task.id)}>Mark as {task.status === "pending" ? "Completed" : "Pending"}</button>
