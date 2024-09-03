@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-
+import '../styles/create.css'
 
 const CreateTask = ({tasks, setTasks}) => {
 
@@ -50,6 +50,7 @@ const CreateTask = ({tasks, setTasks}) => {
           ></textarea>
         </div>
         <div>
+          <label>Task Status: </label>
           <select
             id="status"
             onChange={(e) => setStatus(e.target.value)}

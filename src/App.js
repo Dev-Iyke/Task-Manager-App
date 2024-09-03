@@ -23,18 +23,23 @@ function App() {
   return (
     <Router>
       <div className="App">
-        <h1>Task Manager App</h1>
+        <header>
+        <h1 id="title">Task Manager App</h1>
+        </header>
 
         <div className="content">
           <div className="sidebar-container">
             <SideBar user={user} />
           </div>
+          <div className="tasks-container">
           <Routes>
             <Route exact path="/" element={<Tasks tasks={tasks} setTasks={setTasks} />} />
             <Route path="/create" element={<CreateTask tasks={tasks} setTasks={setTasks} />} />
             <Route exact path="/pending" element={<PendingTasks tasks={tasks} setTasks={setTasks} />} />
             <Route exact path="/completed" element={<CompletedTasks tasks={tasks} setTasks={setTasks} />} />
           </Routes>
+          </div>
+          
         </div>
       </div>
     </Router>

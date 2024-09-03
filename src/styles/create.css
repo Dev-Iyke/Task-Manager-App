@@ -1,0 +1,39 @@
+.input-container{
+    display: flex;
+    flex-direction: column;
+    gap: 1.3rem;
+    width: 50%;
+    margin: 0 auto;
+}
+
+.input-container div{
+    display: flex;
+    flex-direction: column;
+}
+
+.input-container label{
+    font-size: 1.3rem;
+}
+
+.input-container input, .input-container textarea{
+    padding: .5rem;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 1.3rem;
+    outline: none;
+}
+.input-container select{
+    padding: 1rem;
+}
+.input-container select{
+    font-size: 1.3rem;
+}
+.input-container button{
+    padding: 10px;
+    border-radius: 15px;
+    border: none;
+    background-color: navy;
+    color: #fff;
+    font-weight: bold;
+    font-size: 1.2rem;
+}

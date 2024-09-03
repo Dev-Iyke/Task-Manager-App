@@ -8,7 +8,7 @@ const PendingTasks = (props) => {
 
   return (
     <div className="pending">
-      <button>pending</button>
+      <h2>Pending Tasks</h2>
       <div>
         {pendingTasks.length === 0 ? (
           <h3>

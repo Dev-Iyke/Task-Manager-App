@@ -8,7 +8,7 @@ const CompletedTasks = (props) => {
 
   return (
     <div className="completed">
-      <button>completed</button>
+      <h2>Completed Tasks</h2>
       <div>
         {completedTasks.length === 0 ? (
           <h3>
