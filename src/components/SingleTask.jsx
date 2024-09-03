@@ -7,9 +7,9 @@ const SingleTask = (props) => {
   const setTasks = props.setTasks;
   
   const handleDelete = (id) => {
-    const updatedTasks = tasks.filter((task) =>task.id !== id)
-    setTasks(updatedTasks)
-    //setTasks((prevTasks) => prevTasks.filter((task) => task.id !== id));
+    // const updatedTasks = tasks.filter((task) =>task.id !== id)
+    // setTasks(updatedTasks)
+    setTasks((prevTasks) => prevTasks.filter((task) => task.id !== id));
   };
   
   const handleStatusToggle = (id) => {
