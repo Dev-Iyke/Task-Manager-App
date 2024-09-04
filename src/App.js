@@ -6,6 +6,8 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import CreateTask from "./pages/CreateTask";
 import PendingTasks from "./pages/PendingTasks";
 import CompletedTasks from "./pages/CompletedTasks";
+import { faBars } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 function App() {
   const [user, setUser] = useState({ name: "Thompson", role: "dev" });
@@ -25,6 +27,7 @@ function App() {
       <div className="App">
         <header>
         <h1 id="title">Task Manager App</h1>
+        <FontAwesomeIcon className="menu" icon={faBars} />
         </header>
 
         <div className="content">

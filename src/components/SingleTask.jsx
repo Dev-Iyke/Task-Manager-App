@@ -28,7 +28,7 @@ const SingleTask = (props) => {
       { 
         tasks.map((task, index) => (
           <div className="task" key={index}>
-            <h2>{task.title}</h2>
+            <h2 id='task-title'>{task.title}</h2>
             <p id='task-details'>{task.details.length < 79? task.details: task.details.substring(0, 80) + '...'}</p>
             <p>{task.id}</p>
             <div className="actions">

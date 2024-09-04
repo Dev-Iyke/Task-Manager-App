@@ -1,13 +1,19 @@
 
 
 .App #title{
-  font-size: 4rem;
+  font-size: 3rem;
   text-align: center;
 }
 .App header{
+  display: flex;
+  align-items: center;
+  justify-content: center;
   background-color: navy;
   color: gold;
-  padding: 1.5rem 0;
+  padding: 1rem 0;
+}
+.menu{
+  display: none;
 }
 .App .content{
   /* TODO: Uncomment to make display grid */
@@ -42,3 +48,27 @@
     transform: rotate(360deg);
   }
 } */
+@media  screen and (max-width: 400px){
+  .App header{
+    padding: 1rem;
+    justify-content: space-between;
+  }
+  .App #title{
+    font-size: 1.5rem;
+    text-align: center;
+  }
+  .menu{
+    display: block;
+    font-size: 1.5rem;
+  }
+  .App .content{
+    display: flex;
+  }
+  .sidebar-container{
+    display: none;
+  }
+  .tasks-container{
+    width: 100%;
+    padding: 1rem 0 1rem;
+  }
+}

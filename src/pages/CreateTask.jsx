@@ -21,6 +21,7 @@ const CreateTask = ({tasks, setTasks}) => {
 
   return (
     <div className="single-task">
+      <h2>Create a new task</h2>
       <form
         className="input-container"
         onSubmit={(e) => {
