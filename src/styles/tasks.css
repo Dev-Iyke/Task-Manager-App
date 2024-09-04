@@ -1,4 +1,4 @@
-.all-tasks>h2, .pending>h2, .completed>h2{
+.all-tasks>h2, .pending>h2, .completed>h2, .single-task>h2{
     font-size: 2rem;
     text-align: center;
     margin-bottom: 1.5rem;
@@ -73,7 +73,7 @@ h3{
 }
 
 @media  screen and (max-width: 400px){
-    .all-tasks>h2, .pending>h2, .completed>h2{
+    .all-tasks>h2, .pending>h2, .completed>h2, .single-task>h2{
         font-size: 1.2rem;
         margin-bottom: 1rem;
     }
