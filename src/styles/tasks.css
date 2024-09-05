@@ -46,11 +46,16 @@ h3{
     border-radius: 8px;
     border: none;
     outline: none;
+    cursor: pointer;
 }
 .task .icons{
     color: navy;
     font-size: 1.5rem;
     color: red;
+    cursor: pointer;
+}
+.task .icons:hover{
+    color: #760000;
 }
 
 @media  screen and (max-width:850px) {

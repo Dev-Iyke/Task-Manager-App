@@ -22,12 +22,23 @@ function App() {
     localStorage.setItem("locallyStoredTasks", JSON.stringify(tasks))
   }, [tasks])
 
+  function openMenu(){
+    const sidebar = document.querySelector('.sidebar-container')
+    sidebar.classList.toggle('toggle-menu')
+
+    const links = document.querySelectorAll('.sidebar-container a');
+    links.forEach(link => {
+      link.addEventListener('click', () => {
+        sidebar.classList.remove('toggle-menu');
+      });
+  });
+  }
   return (
     <Router>
       <div className="App">
         <header>
         <h1 id="title">Task Manager App</h1>
-        <FontAwesomeIcon className="menu" icon={faBars} />
+        <FontAwesomeIcon onClick={() => openMenu()} className="menu" icon={faBars} />
         </header>
 
         <div className="content">
