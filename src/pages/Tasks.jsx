@@ -8,7 +8,7 @@ const Tasks = ({setTasks, tasks}) => {
       <h2>My Tasks</h2>
       <div className="task-display">
         {(tasks.length === 0) ?
-         (<h3>You do not have any task yet. <br /> click <Link to='/create'>here</Link> to add one</h3>) : 
+         (<p className="no-tasks">You do not have any task yet. <br /> click <Link to='/create'>here</Link> to add one</p>) : 
          (<SingleTask tasks={tasks} setTasks={setTasks} />)}
       </div>
       

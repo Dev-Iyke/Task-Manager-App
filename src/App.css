@@ -24,7 +24,6 @@
 }
 .content .tasks-container {
   background-color: #515151;
-  color: #333;
   grid-column: 2/5;
   padding: 2.5rem 0 1rem;
   background-image: url("/src/imgs/modern-futuristic-sci-fi-background.avif");
@@ -38,14 +37,16 @@
     font-size: 2.5rem;
   }
   .App .content {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
   }
   .content .sidebar-container {
     grid-column: 1/2;
   }
   .content .tasks-container {
-    grid-column: 2/4;
+    grid-column: 2/5;
     background-image: url("/src/imgs/halftone-background-with-circles_.avif");
+    background-blend-mode: overlay;
+    background-color: #242424;
   }
 }
 
@@ -74,6 +75,8 @@
     min-height: 100vh;
     padding: 1rem 0 1rem;
     background-image: url("/src/imgs/mobile-bg.jpg");
+    background-blend-mode: overlay;
+    background-color: #242424;
   }
   .toggle-menu {
     display: block;

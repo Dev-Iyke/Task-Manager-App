@@ -10,7 +10,7 @@ import { faBars } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 function App() {
-  const [user, setUser] = useState({ name: "Thompson", role: "dev" });
+  const [user, setUser] = useState({ name: "Personal", role: "Manager" });
   const [tasks, setTasks] = useState(() => {
     //returns the tasks that was sent to the storage or returns an empty array if no tasks were saved before and assigns it as the initial value of tasks.
     const storedTasks = localStorage.getItem("locallyStoredTasks");
@@ -37,7 +37,7 @@ function App() {
     <Router>
       <div className="App">
         <header>
-        <h1 id="title">Task Manager App</h1>
+        <h1 id="title">My Task Manager</h1>
         <FontAwesomeIcon onClick={() => openMenu()} className="menu" icon={faBars} />
         </header>
 

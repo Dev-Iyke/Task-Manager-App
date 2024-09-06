@@ -11,10 +11,10 @@ const CompletedTasks = (props) => {
       <h2>Completed Tasks</h2>
       <div>
         {completedTasks.length === 0 ? (
-          <h3>
+          <p className="no-tasks">
             You do not have any completed task yet. <br /> click{" "}
             <Link to="/create">here</Link> to add one
-          </h3>
+          </p>
         ) : (
           <SingleTask tasks={completedTasks} setTasks={setTasks} />
         )}

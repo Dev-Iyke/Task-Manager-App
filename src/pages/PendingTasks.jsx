@@ -11,10 +11,10 @@ const PendingTasks = (props) => {
       <h2>Pending Tasks</h2>
       <div>
         {pendingTasks.length === 0 ? (
-          <h3>
+          <p className="no-tasks">
             You do not have any pending task yet. <br /> click{" "}
             <Link to="/create">here</Link> to add one
-          </h3>
+          </p>
         ) : (
           <SingleTask tasks={pendingTasks} setTasks={setTasks} />
         )}

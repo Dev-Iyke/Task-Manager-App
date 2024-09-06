@@ -8,8 +8,13 @@
   text-decoration: underline;
   color: #fff;
 }
-h3 {
+.no-tasks{  font-size: 1.3rem;
+  color: #fff;
   text-align: center;
+}
+.no-tasks a{
+  font-size: 1.3rem;
+  color: gold;
 }
 .test-task {
   width: 95%;
@@ -46,7 +51,6 @@ h3 {
   bottom: 1rem;
   display: flex;
   align-items: center;
-  gap: 2rem;
 }
 .task .actions button {
   background-color: navy;
@@ -61,6 +65,7 @@ h3 {
 .task .icons {
   font-size: 1.8rem;
   cursor: pointer;
+  margin-left: .7rem;
 }
 .task .del {
   color: red;
@@ -82,12 +87,19 @@ h3 {
     font-size: 1.7rem;
     margin-bottom: 1.2rem;
   }
-  h3 {
-    font-weight: 400;
+  .no-tasks{  
+    font-size: 1.2rem;
+    color: #fff;
+    text-align: center;
+  }
+  .no-tasks a{
+    font-size: 1.2rem;
+    color: gold;
   }
   .test-task {
     grid-template-columns: repeat(2, 48%);
   }
+
   .task .actions button {
     padding: 3.5px 7px;
     font-size: 1.1rem;
@@ -102,23 +114,22 @@ h3 {
   .pending > h2,
   .completed > h2,
   .single-task > h2 {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     margin-bottom: 1rem;
   }
-  h3 {
+  .no-tasks{  
+    font-size: 1.1rem;
+    color: #fff;
     text-align: center;
+  }
+  .no-tasks a{
+    font-size: 1.3rem;
+    color: gold;
   }
   .test-task {
     width: 90%;
     display: flex;
     flex-direction: column;
-  }
-  .task .actions {
-    position: absolute;
-    bottom: 1rem;
-    display: flex;
-    align-items: center;
-    gap: 3rem;
   }
   .task .actions button {
     padding: 4px 8px;
@@ -127,5 +138,6 @@ h3 {
   }
   .task .icons {
     font-size: 1.5rem;
+    margin-left: 1.5rem;
   }
 }
