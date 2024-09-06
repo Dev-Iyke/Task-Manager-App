@@ -1,6 +1,7 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import '../styles/tasks.css'
-import { faTrashCan } from '@fortawesome/free-regular-svg-icons';
+import { faHourglassHalf, faTrashCan } from '@fortawesome/free-regular-svg-icons';
+import { faCheck, faListCheck, faMarker } from '@fortawesome/free-solid-svg-icons';
 
 const SingleTask = (props) => {
   const tasks = props.tasks;
@@ -30,11 +31,12 @@ const SingleTask = (props) => {
           <div className="task" key={index}>
             <h2 id='task-title'>{task.title}</h2>
             <p id='task-details'>{task.details.length < 79? task.details: task.details.substring(0, 80) + '...'}</p>
-            <p>{task.id}</p>
             <div className="actions">
               <button onClick={() => handleStatusToggle(task.id)}>Mark as {task.status === "pending" ? "Completed" : "Pending"}</button>
-              <FontAwesomeIcon className='icons' onClick={() => handleDelete(task.id)} icon={faTrashCan}/>
+              <FontAwesomeIcon className='del icons' onClick={() => handleDelete(task.id)} icon={faTrashCan}/>
+              <p>{task.status === "pending" ? <FontAwesomeIcon className="pend icons" icon={faHourglassHalf} /> : <FontAwesomeIcon className="comp icons" icon={faCheck} />} </p>
             </div>
+
           </div>
           
         ))

@@ -1,10 +1,8 @@
-
-
-.App #title{
+.App #title {
   font-size: 3rem;
   text-align: center;
 }
-.App header{
+.App header {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -12,67 +10,72 @@
   color: gold;
   padding: 1rem 0;
 }
-.menu{
+.menu {
   display: none;
 }
-.App .content{
-  /* TODO: Uncomment to make display grid */
-   display: grid;
+.App .content {
+  display: grid;
   grid-template-columns: repeat(4, 1fr);
-/*   width: 100%;
-  margin: 0 auto; */
-
 }
-.content .sidebar-container{
+.content .sidebar-container {
   grid-column: 1/2;
   background-color: #2c2c2c;
   color: #c0c0c0;
-/*   display: flex;
-  flex-direction: column;
-  align-items: center; */
 }
-.content .tasks-container{
-  background-color: #e1e1e1;
+.content .tasks-container {
+  background-color: #515151;
   color: #333;
   grid-column: 2/5;
   padding: 2.5rem 0 1rem;
-  /* text-align: center; */
+  background-image: url("/src/imgs/modern-futuristic-sci-fi-background.avif");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-blend-mode: overlay;
 }
 
-
-
-/* @keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+@media screen and (max-width: 900px) {
+  .App #title {
+    font-size: 2.5rem;
   }
-  to {
-    transform: rotate(360deg);
+  .App .content {
+    grid-template-columns: repeat(3, 1fr);
   }
-} */
-@media  screen and (max-width: 400px){
-  .App header{
+  .content .sidebar-container {
+    grid-column: 1/2;
+  }
+  .content .tasks-container {
+    grid-column: 2/4;
+    background-image: url("/src/imgs/halftone-background-with-circles_.avif");
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .App header {
     padding: 1rem;
     justify-content: space-between;
   }
-  .App #title{
+  .App #title {
     font-size: 1.5rem;
     text-align: center;
   }
-  .menu{
+  .menu {
     display: block;
     font-size: 1.5rem;
   }
-  .App .content{
+  .App .content {
     display: flex;
   }
-  .sidebar-container{
+  .sidebar-container {
     display: none;
+    width: 50%;
   }
-  .tasks-container{
+  .content .tasks-container {
     width: 100%;
+    min-height: 100vh;
     padding: 1rem 0 1rem;
+    background-image: url("/src/imgs/mobile-bg.jpg");
   }
-  .toggle-menu{
+  .toggle-menu {
     display: block;
     position: absolute;
     z-index: 10;

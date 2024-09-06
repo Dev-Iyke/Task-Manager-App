@@ -47,8 +47,8 @@ const SideBar = (props) => {
       </nav>
 
       <div className="user">
-        <h3><FontAwesomeIcon icon={faUser} /> {user.name}</h3>
-        <p><FontAwesomeIcon icon={faLocationDot} /> {user.role}</p>
+        <h3><FontAwesomeIcon className="icons" icon={faUser} /> {user.name}</h3>
+        <p><FontAwesomeIcon className="icons" icon={faLocationDot} /> {user.role}</p>
       </div>
     </div>
   );
