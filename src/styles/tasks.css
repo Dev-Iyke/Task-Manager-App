@@ -28,14 +28,14 @@
   width: 100%;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   gap: 0.5rem;
   padding: 0.7rem;
   background-color: #fff;
-  min-height: 200px;
+  height: 200px;
   color: #333;
   border-radius: 15px;
   box-shadow: 2px 3px 10px;
-  position: relative;
 }
 .task #task-title {
   text-transform: capitalize;
@@ -47,7 +47,6 @@
   white-space: pre-wrap;
 }
 .task .actions {
-  position: absolute;
   bottom: 1rem;
   display: flex;
   align-items: center;
@@ -99,7 +98,9 @@
   .test-task {
     grid-template-columns: repeat(2, 48%);
   }
-
+  .task{
+    height: 180px;
+  }
   .task .actions button {
     padding: 3.5px 5px;
     font-size: .9rem;

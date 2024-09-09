@@ -6,10 +6,17 @@ import { faCheck, faListCheck, faMarker } from '@fortawesome/free-solid-svg-icon
 const SingleTask = (props) => {
   const tasks = props.tasks;
   const setTasks = props.setTasks;
+
+  const truncateText = (text, maxLength) => {
+    const placeholder = '. ';
+    let modifiedText = text.replace(/\n/g, placeholder);
+    if (modifiedText.length > maxLength) {
+      modifiedText = modifiedText.substring(0, maxLength);
+    }
+    return modifiedText
+  };
   
   const handleDelete = (id) => {
-    // const updatedTasks = tasks.filter((task) =>task.id !== id)
-    // setTasks(updatedTasks)
     setTasks((prevTasks) => prevTasks.filter((task) => task.id !== id));
   };
   
@@ -29,8 +36,10 @@ const SingleTask = (props) => {
       { 
         tasks.map((task, index) => (
           <div className="task" key={index}>
-            <h2 id='task-title'>{task.title}</h2>
-            <p id='task-details'>{task.details.length < 79? task.details: task.details.substring(0, 80) + '...'}</p>
+            <div>
+            <h2 id='task-title'>{task.title.length < 15 ? task.title : task.title.substring(0, 15) + '...'}</h2>
+            <p id='task-details'>{truncateText(task.details, 79) + '...'}</p>
+            </div>
             <div className="actions">
               <button onClick={() => handleStatusToggle(task.id)}>Mark as {task.status === "pending" ? "Completed" : "Pending"}</button>
               <FontAwesomeIcon className='del icons' onClick={() => handleDelete(task.id)} icon={faTrashCan}/>
