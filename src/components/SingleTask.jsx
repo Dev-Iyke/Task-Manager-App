@@ -11,7 +11,7 @@ const SingleTask = (props) => {
     const placeholder = '. ';
     let modifiedText = text.replace(/\n/g, placeholder);
     if (modifiedText.length > maxLength) {
-      modifiedText = modifiedText.substring(0, maxLength);
+      modifiedText = modifiedText.substring(0, maxLength) + '...';
     }
     return modifiedText
   };
@@ -38,7 +38,7 @@ const SingleTask = (props) => {
           <div className="task" key={index}>
             <div>
             <h2 id='task-title'>{task.title.length < 15 ? task.title : task.title.substring(0, 15) + '...'}</h2>
-            <p id='task-details'>{truncateText(task.details, 79) + '...'}</p>
+            <p id='task-details'>{truncateText(task.details, 79)}</p>
             </div>
             <div className="actions">
               <button onClick={() => handleStatusToggle(task.id)}>Mark as {task.status === "pending" ? "Completed" : "Pending"}</button>
