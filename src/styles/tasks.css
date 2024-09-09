@@ -47,9 +47,9 @@
   white-space: pre-wrap;
 }
 .task .actions {
-  bottom: 1rem;
   display: flex;
   align-items: center;
+  justify-content: space-between;
 }
 .task .actions button {
   background-color: navy;
@@ -64,7 +64,6 @@
 .task .icons {
   font-size: 1.4rem;
   cursor: pointer;
-  margin-left: .8rem;
 }
 .task .del {
   color: red;
@@ -132,6 +131,9 @@
     display: flex;
     flex-direction: column;
   }
+  .task .actions{
+    padding: 0 1rem;
+  }
   .task .actions button {
     padding: 4px 8px;
     border-radius: 5px;
@@ -139,6 +141,5 @@
   }
   .task .icons {
     font-size: 1.5rem;
-    margin-left: 1.5rem;
   }
 }
